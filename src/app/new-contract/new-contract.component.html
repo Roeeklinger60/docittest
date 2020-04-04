@@ -1,0 +1,153 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<div id="box" class="mainbox">
+
+  <div id="box" class="rightbox">
+
+    <div class="rightbarsection" id="account">
+       <p class="username">Roee Klinger</p>
+       <div class="round">
+         <img src="assets/images/man.svg" alt="Man" class="man">
+         </div>
+      </div>
+      <div class="rightbarsection" id="progressbar">
+        <div class="toptitlewrap">
+        <p class="toptitle">ההתקדמות שלך</p>
+      </div>
+        <div class="bottomtitlewrap">
+        <p class="bottomtitle">39% הושלם</p>
+                  <div class="time">
+        <img src="assets/images/clock.svg" alt="Clock" class="clock"><p class="minremain">22 דקות נותרו</p>
+            </div>
+        </div>
+        <div class="bar">
+          <div class="progress">
+          </div>
+        </div>
+      </div>
+
+
+    <div class="rightbox_container">
+    <div *ngIf="!visualize_main" class="rightbox_contect">
+      <p>Hello, create you Contrast!</p>
+      <button (click) = show_sections()>Generate</button>
+    </div>
+
+
+    <div *ngIf="visualize_main" class="rightbox_contect">
+
+      <div id="main">
+
+        <div *ngFor="let section of right_sections">
+          <div *ngIf="section == cur_section">
+          <ul>
+
+            <div *ngFor="let variable of variables_dict[section]" class="rightinputs">
+
+              <li *ngIf="variable.question != 'None'">
+                {{variable.question}}
+              </li>
+
+              <div *ngIf="variable.type == 'str'">
+                  <input type="text" [(ngModel)] = "variable.value" placeholder = "{{variable.name}}">
+              </div>
+
+              <div *ngIf="variable.type == 'check box + two text'">
+                  <input type="checkbox" (change)="variable.value[0] = !variable.value[0] " >
+              </div>
+
+              <div *ngIf="variable.type == 'date'">
+                <input type="date" [(ngModel)]="variable.value"/>
+              </div>
+
+              <div *ngIf="variable.type == 'drop'">
+                <select [(ngModel)] = "variable.value[0]">
+                  <option *ngFor="let drop_option of variable.value | slice:1:variable.value.length" [value] = 'drop_option.index'>
+                    {{drop_option.right}}
+                  </option>
+                </select>
+              </div>
+
+            </div>
+
+            <button (click)="add_input_clause(section)" class="rightinputs">הוסף סעיף</button>
+
+
+              <div *ngFor="let custom of free_clauses[section]">
+                <div *ngIf="custom.show">
+                  <input [(ngModel)]="custom.value" type="text">
+                  <input type="button" (click)="remove_input_clause(section, custom)" value="remove">
+                </div>
+              </div>
+
+          </ul>
+        </div>
+      </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="rightbarsection" id="navigator">
+    <select [(ngModel)]="cur_section">
+<option *ngFor="let section of right_sections">{{section}}</option>
+</select>
+    <span>&#9664;</span>
+    </div>
+  </div>
+
+<div class="leftbox_container">
+  <div class="wrapper">
+    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+  <div id="box" class="leftbox">
+
+
+
+
+    <div *ngIf="visualize_main" class="leftbox_contect">
+      <ol>
+        <div *ngFor="let section of left_sections">
+
+          <div *ngFor="let clause of sections_dict[section]">
+
+            <div *ngIf="(!clause.title)" class="clausewrapper">
+              <li class="clause">
+                  {{clause.render_to_left()}}
+              </li>
+              <div class="delete">
+              </div>
+            </div>
+
+            <div *ngIf="clause.title">
+              <div class="title">
+                  {{clause.render_to_left()}}
+              </div>
+            </div>
+
+          </div>
+
+          <div *ngFor="let custom of free_clauses[section]">
+
+            <li *ngIf="custom.show">
+              {{custom.value}}
+            </li>
+          </div>
+
+        </div>
+      </ol>
+    </div>
+
+
+  </div>
+  <div class="download">
+    <img src="assets/images/cloud.svg" alt="Cloud">
+  </div>
+      </div>
+  </div>
+
+</div>

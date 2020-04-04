@@ -1,0 +1,383 @@
+.wrapper {
+  position: relative;
+  display: inline-block; /* shrink wrap */
+  height: 95vh; /* arbitrary input height; adjust this */
+}
+.wrapper > img {
+  height: 70.7070707070707%; /* make the img's width 100% of the height of .container */
+}
+.leftbox {
+  /* match size of .container, without influencing it */
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+
+
+
+
+ul {
+  -webkit-margin-before: 0px;
+  margin-block-start: 0px;
+  padding-inline-start: 20px;
+  -webkit-padding-start: 0px;
+  padding-inline-start: 0px;
+  margin-block-end: 0px;
+}
+
+ol {
+  padding-inline-end: 20px;
+}
+
+input {
+  border: 1px solid #2b2626;
+  border-radius: 0.3em;
+  background-color: white;
+}
+
+p, button, input, .mainbox {
+  color: #2b2626 !important;
+}
+
+p {
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+h1 {
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+
+.mainbox {
+    width: 100% !important;
+    text-align: center;
+    direction: rtl;
+    background-color: #f6f7f9;
+    font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+
+  #box {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  text-align: right;
+  }
+
+  .rightbox {
+    justify-content: center;
+    box-shadow: -12px 0 24px -5px rgba(132,146,166,0.16);
+    width: 19%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    flex-direction: column;
+    min-width: fit-content;
+  }
+
+  .rightbox_container {
+    height: 100%;
+    width: 100%;
+    align-self: center;
+    overflow-wrap: break-word;
+    overflow: scroll;
+  }
+
+  .rightbox_contect {
+    justify-content: center;
+    display: flex;
+  }
+
+  .leftbox_container {
+    width: 100%;
+    height: 95%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .leftbox {
+    background-color: white;
+    align-items: baseline !important;
+    justify-content: center;
+    border-radius: 3%;
+    border: 2px solid #2b2626;
+    overflow: scroll;
+  }
+
+  .leftbox_contect {
+    justify-content: center;
+    padding-top: 1em;
+    width: 100%;
+    overflow-wrap: break-word;
+  }
+
+  #category {
+    padding: 0rem 0;
+padding: 5px;
+border: 1px solid #2b2626;
+border-radius: 0.3em;
+background-color: white;
+margin: 0px 1em;
+text-align-last: center;
+  }
+
+  #account, #progressbar {
+    border-bottom: 1px solid #e1e5ea;
+  }
+
+#progressbar {
+  display: flex;
+flex-direction: column;
+}
+
+  #navigator {
+    border-top: 1px solid #e1e5ea;
+  }
+
+  .rightbarsection {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 16px 0px;
+   width: 100%;
+   height: 5.5em;
+  }
+
+  .username {
+    margin: 0px 10px;
+  }
+
+  .rightinputs {
+    padding: 0.75rem 0;
+  }
+
+  .wrapper {
+    position: relative;
+  }
+
+  .download {
+    height: 50px;
+        width: 50px;
+        background-color: #34ca7f;
+        border-radius: 30px;
+        position: absolute;
+        bottom: 1em;
+        left: 1em;
+        border: 1px solid white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+        font-family: sans-serif;
+        color: #f6f7f9;
+  }
+
+.download img {
+  height: 40px;
+  top: 3px;
+  position: relative;
+}
+
+.download:hover img, .download.hover img, .download:hover {
+height: 50px;
+width: 50px;
+cursor: pointer;
+}
+
+button:hover, span:hover {
+  cursor: pointer;
+}
+
+  .arrow {
+    font-size: 20px;
+        font-weight: 900;
+        bottom: 2px;
+        position: relative;
+  }
+
+  .round {
+    height: 32px;
+    width: 32px;
+    background-color: black;
+    border-radius: 30px;
+  }
+
+  button.rightinputs {
+    padding: 0rem 0;
+    margin: 0.75rem 0;
+    padding: 5px;
+    background-color: #f6f7f9;
+    border: 1px solid #2b2626;
+    border-radius: 0.3em;
+    background-color: white;
+  }
+
+  .title {
+    font-size: larger;
+    list-style-type: none;
+    padding-bottom: 40px;
+    text-align: center;
+    font-size: 33px;
+    left: 17px;
+    counter-increment: none;
+    position: relative;
+    font-weight: bold;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 0px 35px;
+  width: fit-content;
+}
+
+.bar {
+  height: 15px;
+  width: 90%;
+  background-color: #c0d2f1;
+  border: 0px solid white;
+  border-radius: 93px;
+  margin-top: 3px;
+}
+
+.progress {
+  height: 6px;
+  width: 63%;
+  background-color: #2f6eef;
+  border: 0px solid white;
+  border-radius: 93px;
+}
+
+.toptitle {
+    color: #c0d2f1 !important;
+    align-self: flex-start;
+}
+
+.bottomtitle {
+    color: #2f6eef !important;
+    position: relative;
+    align-self: flex-start;
+    margin-left: auto;
+}
+
+.bottomtitlewrap {
+  display: flex;
+  width: 90%;
+}
+
+.minremain {
+  color: #c0d2f1 !important;
+  font-size: 11px;
+  margin-right: 3px;
+}
+
+.toptitlewrap {
+  width: 90%;
+}
+
+.clock {
+  margin: auto 0px;
+  height: 13px;
+}
+
+.time {
+  display: flex;
+      justify-content: center;
+      align-items: center;
+      height: fit-content;
+      align-self: flex-end;
+}
+
+.clausewrapper:hover .delete,.clausewrapper.hover .delete {
+  display: inherit;
+}
+
+.wowhey {
+  height: 10px;
+  width: 10px;
+  background-color: red;
+  border-radius: 100px;
+  display: none;
+  background: #f90;
+color: #fff;
+
+font-size: 2em;
+font-weight: bold;
+text-align: center;
+}
+
+.clausewrapper {
+  display: flex;
+  height: 1.5em;
+}
+
+.delete {
+	position: relative;
+	width: 19px;
+	height: 19px;
+	border: 2px solid transparent;
+	background-color: #ff5248;
+	border-radius: 50%;
+  bottom: 7px;
+    left: 3px;
+      display: none;
+	}
+.delete::before, .delete::after {
+	position: absolute;
+	top: 6px;
+	left: 1px;
+	width: 13px;
+	height: 3px;
+	content: "";
+	background-color: #f6f7f9;
+	}
+.delete::before {
+	-ms-transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+	}
+.delete::after {
+	-ms-transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+	}
+.delete:hover { cursor: pointer; }
+.delete:hover::before, .delete:hover::after { display: block; }
